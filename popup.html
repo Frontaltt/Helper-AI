@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Анимированный неоновый блик на заднем плане -->
+  <div class="bg-glow"></div>
+
+  <div class="glass-panel">
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="summary" id="tab-sum">Summary</button>
+      <button class="tab-btn" data-tab="settings" id="tab-set">⚙️</button>
+    </nav>
+
+    <!-- Вкладка Сжатия -->
+    <div class="tab-content active" id="summary">
+      <div class="textarea-wrapper">
+        <textarea id="sum-input" placeholder="Paste text here..."></textarea>
+        <div class="glow-border"></div>
+      </div>
+      <button id="btn-sum" class="neon-btn">
+        <span>Summarize</span>
+      </button>
+      <div id="sum-output" class="output hidden"></div>
+    </div>
+
+    <!-- Вкладка Настроек -->
+    <div class="tab-content" id="settings">
+      <h3 id="set-title">Helper AI Settings</h3>
+      
+      <div class="input-group">
+        <label>Interface Language</label>
+        <select id="ui-lang">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+        </select>
+      </div>
+      
+      <div class="input-group">
+        <label>Hugging Face Token</label>
+        <input type="password" id="api-key" placeholder="hf_...">
+        <span id="key-status" class="key-status status-empty">Enter a key...</span>
+      </div>
+
+      <button id="save-settings" class="neon-btn">
+        <span>Save Settings</span>
+      </button>
+      
+      <div class="instructions" id="inst-text">
+        Active Model: <strong>Qwen 2.5 14B</strong>
+      </div>
+    </div>
+
+    <!-- Твой фирменный водяной знак -->
+    <div class="author-tag">by Frontalt</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
