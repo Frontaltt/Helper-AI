@@ -1,4 +1,4 @@
-﻿@keyframes pulseGlow {
+@keyframes pulseGlow {
   0% { transform: translate(0, 0) scale(1); opacity: 0.4; }
   50% { transform: translate(10px, -15px) scale(1.15); opacity: 0.6; filter: blur(90px); }
   100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
@@ -21,7 +21,6 @@ body {
   position: relative;
 }
 
-/* Переливающийся задний фон за стеклом */
 .bg-glow {
   content: "";
   position: absolute;
@@ -42,14 +41,13 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 24px;
   padding: 20px;
-  padding-bottom: 35px; /* Место для подписи автора */
+  padding-bottom: 35px;
   box-shadow: 
     0 4px 30px rgba(0, 0, 0, 0.4),
     inset 0 1px 1px rgba(255, 255, 255, 0.1);
   position: relative;
 }
 
-/* Навигация (вкладки) */
 .tabs {
   display: flex;
   background: rgba(0, 0, 0, 0.4);
@@ -86,7 +84,6 @@ body {
 .tab-content { display: none; }
 .tab-content.active { display: block; }
 
-/* Текстовые поля, инпуты и селекты */
 .textarea-wrapper { position: relative; width: 100%; margin-bottom: 16px; }
 
 textarea, select, input {
@@ -110,7 +107,6 @@ textarea:focus, input:focus, select:focus {
   background: rgba(0, 0, 0, 0.75);
 }
 
-/* Космическая кнопка с бегущим градиентом и неоновым отсветом */
 .neon-btn {
   width: 100%;
   background: linear-gradient(135deg, #00f2fe, #ff007f, #00f2fe);
@@ -140,7 +136,6 @@ textarea:focus, input:focus, select:focus {
 
 .neon-btn:active { transform: translateY(1px); }
 
-/* Статусы ключа */
 .input-group { margin-bottom: 14px; }
 .input-group label { display: block; font-size: 11px; font-weight: 700; color: #64748b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
 
@@ -149,7 +144,6 @@ textarea:focus, input:focus, select:focus {
 .status-unknown { color: #f59e0b; text-shadow: 0 0 8px rgba(245, 158, 11, 0.3); }
 .status-empty { color: #475569; }
 
-/* Окно ответа от ИИ */
 .output {
   margin-top: 18px;
   padding: 14px;
@@ -166,7 +160,6 @@ textarea:focus, input:focus, select:focus {
 }
 .output.hidden { display: none; }
 
-/* Кастомный скроллбар в стиле киберпанк */
 .output::-webkit-scrollbar { width: 4px; }
 .output::-webkit-scrollbar-track { background: transparent; }
 .output::-webkit-scrollbar-thumb { background: rgba(0, 242, 254, 0.2); border-radius: 10px; }
@@ -175,12 +168,11 @@ textarea:focus, input:focus, select:focus {
 #set-title { margin: 0 0 16px 0; font-size: 14px; font-weight: 800; color: #00f2fe; text-align: center; text-transform: uppercase; letter-spacing: 0.5px; }
 .instructions { font-size: 11px; color: #475569; background: rgba(0, 0, 0, 0.2); padding: 10px; border-radius: 10px; margin-top: 14px; text-align: center; border: 1px solid rgba(255,255,255,0.02); }
 
-/* Фирменная надпись by Frontalt в углу */
 .author-tag {
   position: absolute;
   bottom: 10px;
   right: 18px;
-  font-family: 'Courier New', Courier, monospace; /* Создает эффект ручного ввода/кода */
+  font-family: 'Courier New', Courier, monospace;
   font-size: 11px;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.15);
@@ -190,6 +182,6 @@ textarea:focus, input:focus, select:focus {
 }
 
 .glass-panel:hover .author-tag {
-  color: rgba(0, 242, 254, 0.4); /* Подсвечивается неоном при наведении на плашку */
+  color: rgba(0, 242, 254, 0.4);
   text-shadow: 0 0 5px rgba(0, 242, 254, 0.3);
 }
