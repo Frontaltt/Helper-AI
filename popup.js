@@ -1,4 +1,4 @@
-﻿const providers = {
+const providers = {
   qwen: { 
     url: "https://router.huggingface.co/v1/chat/completions", 
     model: "Qwen/Qwen2.5-72B-Instruct", 
@@ -14,7 +14,6 @@ const locales = {
 let currentLang = 'en';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // Логика переключения двух вкладок: Сжатие и Настройки
   document.querySelectorAll('.tab-btn').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.tab-btn, .tab-content').forEach(el => el.classList.remove('active'));
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
-  // Загрузка сохранённого ключа и языка
   const data = await chrome.storage.local.get(['apiKey', 'uiLang', 'contextText']);
   currentLang = data.uiLang || 'en';
   document.getElementById('ui-lang').value = currentLang;
@@ -49,7 +47,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
-  // Если текст прилетел из контекстного меню (ПКМ)
   if (data.contextText) {
     document.getElementById('sum-input').value = data.contextText;
     requestAI();
@@ -115,7 +112,6 @@ async function requestAI() {
 
     const r = await res.json();
     
-    // Твой оригинальный рабочий парсинг ответов черезchoices
     if (r && r.choices && r.choices[0] && r.choices[0].message) {
       out.innerText = r.choices[0].message.content.trim();
     } else if (r.error) {
