@@ -1,65 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Анимированный неоновый блик на заднем плане -->
-  <div class="bg-glow"></div>
-
-  <div class="glass-panel">
-    <nav class="tabs">
-      <button class="tab-btn active" data-tab="summary" id="tab-sum">Summary</button>
-      <button class="tab-btn" data-tab="settings" id="tab-set">⚙️</button>
-    </nav>
-
-    <!-- Вкладка Сжатия -->
-    <div class="tab-content active" id="summary">
-      <div class="textarea-wrapper">
-        <textarea id="sum-input" placeholder="Paste text here..."></textarea>
-        <div class="glow-border"></div>
-      </div>
-      <button id="btn-sum" class="neon-btn">
-        <span>Summarize</span>
-      </button>
-      <div id="sum-output" class="output hidden"></div>
-    </div>
-
-    <!-- Вкладка Настроек -->
-    <div class="tab-content" id="settings">
-      <h3 id="set-title">Helper AI Settings</h3>
-      
-      <div class="input-group">
-        <label>Interface Language</label>
-        <select id="ui-lang">
-          <option value="en">English</option>
-          <option value="ru">Русский</option>
-        </select>
-      </div>
-      
-      <div class="input-group">
-        <label>Hugging Face Token</label>
-        <div class="api-key-wrapper">
-          <input type="password" id="api-key" placeholder="hf_...">
-          <button id="paste-api-key">Paste</button>
+    <div class="bg-glow"></div>
+    <div class="glass-panel">
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="summary" id="tab-sum">summary</button>
+            <button class="tab-btn" data-tab="settings" id="tab-set">⚙️</button>
+        </nav>
+        <div class="tab-content active" id="summary">
+            <div class="textarea-wrapper">
+                <textarea id="sum-input" placeholder="paste text here..."></textarea>
+                <div class="glow-border"></div>
+            </div>
+            <button id="btn-sum" class="neon-btn">
+                <span>summarize</span>
+            </button>
+            <div id="sum-output" class="output hidden"></div>
         </div>
-        <span id="key-status" class="key-status status-empty">Enter a key...</span>
-      </div>
-
-      <button id="save-settings" class="neon-btn">
-        <span>Save Settings</span>
-      </button>
-      
-      <div class="instructions" id="inst-text">
-        Active Model: <strong>Qwen 2.5 14B</strong>
-      </div>
+        <div class="tab-content" id="settings">
+            <h3 id="set-title">helper ai settings</h3>
+            <div class="input-group">
+                <label>interface language</label>
+                <select id="ui-lang">
+                    <option value="en">english</option>
+                    <option value="ru">русский</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>hugging face token</label>
+                <div class="api-key-wrapper">
+                    <input type="password" id="api-key" placeholder="hf_...">
+                    <button id="paste-api-key">paste</button>
+                </div>
+                <span id="key-status" class="key-status status-empty">enter a key...</span>
+            </div>
+            <button id="save-settings" class="neon-btn">
+                <span>save settings</span>
+            </button>
+            <div class="instructions" id="inst-text">
+                active model: <strong>qwen 2.5 14b</strong>
+            </div>
+        </div>
+        <div class="author-tag">by frontalt</div>
     </div>
-
-    <!-- Твой фирменный водяной знак -->
-    <div class="author-tag">by Frontalt</div>
-  </div>
-
-  <script src="popup.js"></script>
+    <script src="popup.js"></script>
 </body>
 </html>
